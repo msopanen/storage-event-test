@@ -1,0 +1,16 @@
+{
+  "name": "storage-event",
+  "version": "1.0.0",
+  "description": "storage event demo",
+  "main": "index.js",
+  "author": "msopanen",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "clean": "rimraf node_modules"
+  },
+  "devDependencies": {
+    "express": "^4.15.2",
+    "path": "^0.12.7"
+  }
+}

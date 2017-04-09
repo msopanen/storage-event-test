@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Storage event demo</title>
+    </head>
+
+    <body>
+
+        <script>
+
+            for(var i=0; i<2; i++) {
+                const iframe = document.createElement('iframe');
+                iframe.scrolling = "no"
+                iframe.src = "http://localhost:3000/se.html";
+                document.body.appendChild(iframe);
+            }
+
+        </script>
+    </body>
+</html>

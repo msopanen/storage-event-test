@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Storage event demo</title>
+    </head>
+
+    <button onclick="writeSession()">write session</button>
+    <button onclick="clearSession()">clear session</button>
+    <button onclick="writeLocal()">write local</button>
+    <button onclick="clearLocal()">clear local</button>
+    <br/>
+    <p id="p1">Empty</p>
+
+    <body>
+        <script>
+            
+            function writeSession()
+            {
+                sessionStorage.setItem("fi.mps", Math.random());
+            }
+            
+            function clearSession()
+            {
+                sessionStorage.clear();
+            }
+
+            function writeLocal()
+            {
+                localStorage.setItem("fi.mps", Math.random());
+            }
+
+            function clearLocal()
+            {
+                localStorage.clear();
+            }
+
+            addEventListener('storage', function(e) {  
+                
+                console.log(e.storageArea===sessionStorage);
+                document.getElementById("p1").innerHTML = e.storageArea.getItem("fi.mps");
+
+            });
+
+            // Local Storage may have data when browser is resfreshed
+            document.getElementById("p1").innerHTML = localStorage.getItem("fi.mps");
+            //document.getElementById("p1").innerHTML = sessionStorage.getItem("fi.mps");
+
+        </script>
+    </body>
+</html>
